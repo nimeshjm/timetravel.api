@@ -5,8 +5,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import trip.controller.TripController;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
 public class TripControllerTest {
@@ -29,6 +29,7 @@ public class TripControllerTest {
                                 "}"))
                 .andExpect(status().isCreated());
     }
+
 
     // TODO
     // implement cross cutting: test 4XX, 5XX
