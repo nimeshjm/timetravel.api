@@ -1,0 +1,8 @@
+---
+applications:
+  - name: timetravel-api
+    buildpack: java_buildpack
+    path: target/timetravel-1.0.0-SNAPSHOT.jar
+    random-route: true
+    memory: 256MB
+    disk: 128MB
