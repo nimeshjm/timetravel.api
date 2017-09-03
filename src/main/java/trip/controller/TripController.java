@@ -9,6 +9,7 @@ import trip.model.TripRequest;
 @RestController
 public class TripController {
 
+    @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/trip")
     public ResponseEntity<Trip> trip(@RequestBody TripRequest trip) {
         // TODO
