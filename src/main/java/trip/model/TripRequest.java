@@ -1,9 +1,13 @@
 package trip.model;
 
+import javax.validation.constraints.Pattern;
 import java.util.Date;
 
 public class TripRequest {
+
+    @Pattern(regexp = "[a-zA-Z]+\\w")
     private String id;
+
     private String place;
     private Date date;
 

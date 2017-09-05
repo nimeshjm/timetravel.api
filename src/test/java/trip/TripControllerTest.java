@@ -21,13 +21,25 @@ public class TripControllerTest {
     @Test
     public void trip_singletriprequest_true() throws Exception {
         mockMvc.perform(post("/trip")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\n" +
-                                "\t\"id\": \"id-1232131\",\n" +
-                                "\t\"place\": \"london\",\n" +
-                                "\t\"date\": \"2017-09-03T10:10:00.000Z\"\n" +
-                                "}"))
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\n" +
+                        "\t\"id\": \"id-1232131\",\n" +
+                        "\t\"place\": \"london\",\n" +
+                        "\t\"date\": \"2017-09-03T10:10:00.000Z\"\n" +
+                        "}"))
                 .andExpect(status().isCreated());
+    }
+
+    @Test
+    public void trip_singletriprequestinvalidid_false() throws Exception {
+        mockMvc.perform(post("/trip")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\n" +
+                        "\t\"id\": \"1232131\",\n" +
+                        "\t\"place\": \"london\",\n" +
+                        "\t\"date\": \"2017-09-03T10:10:00.000Z\"\n" +
+                        "}"))
+                .andExpect(status().isBadRequest());
     }
 
 
