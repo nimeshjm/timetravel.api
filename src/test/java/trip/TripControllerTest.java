@@ -23,7 +23,7 @@ public class TripControllerTest {
         mockMvc.perform(post("/trip")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content("{\n" +
-                        "\t\"id\": \"id-1232131\",\n" +
+                        "\t\"id\": \"id1232131\",\n" +
                         "\t\"place\": \"london\",\n" +
                         "\t\"date\": \"2017-09-03T10:10:00.000Z\"\n" +
                         "}"))

@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class TripRequest {
 
-    @Pattern(regexp = "[a-zA-Z]+\\w")
+    @Pattern(regexp = "[a-zA-Z]+\\w*")
     private String id;
 
     private String place;
