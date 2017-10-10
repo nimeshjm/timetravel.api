@@ -42,6 +42,24 @@ public class TripControllerTest {
                 .andExpect(status().isBadRequest());
     }
 
+    @Test
+    public void trip_multipletriprequestssamerequest_false() throws Exception {
+        String content = "{\n" +
+                "\t\"id\": \"a1232131\",\n" +
+                "\t\"place\": \"london\",\n" +
+                "\t\"date\": \"2017-09-03T10:10:00.000Z\"\n" +
+                "}";
+
+        mockMvc.perform(post("/trip")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(content));
+
+        mockMvc.perform(post("/trip")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(content))
+                .andExpect(status().isInternalServerError());
+    }
+
 
     // TODO
     // implement cross cutting: test 4XX, 5XX

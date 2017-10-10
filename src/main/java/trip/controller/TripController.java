@@ -11,6 +11,8 @@ import javax.validation.Valid;
 @RestController
 public class TripController {
 
+
+
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/trip")
     public ResponseEntity<Trip> trip(@Valid @RequestBody TripRequest trip) {
